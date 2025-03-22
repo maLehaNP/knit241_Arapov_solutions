@@ -15,11 +15,11 @@ public class Main {
     public static void main(String[] args) throws IOException, URISyntaxException {
         TreeMap<Integer, TaskHolder> tasks = TaskFinder.findTasks(PACKAGE);
         for (TaskHolder task : tasks.values()) {
-            System.out.println("Номер задачи: " + task.getId() + ": " + task.getDescriptor());
+            System.out.printf("Задача %d: %s%n", task.getId(), task.getDescriptor());
         }
 
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.println("Введите номер задачи для запуска");
+            System.out.print("Введите номер задачи для запуска: ");
             TaskHolder taskHolder = tasks.get(scanner.nextInt());
             if (taskHolder != null) {
                 TaskExecutor.executeTask(taskHolder.getTaskClass());
