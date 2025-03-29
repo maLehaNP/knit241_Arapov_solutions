@@ -2,8 +2,6 @@ package org.knit.solutions;
 
 import org.knit.TaskDescription;
 
-import java.io.Console;
-
 /**
  * Условие задачи:
  * Дан массив целых чисел arr фиксированной длины. Необходимо продублировать каждое вхождение нуля, сдвигая остальные элементы вправо.
@@ -34,7 +32,7 @@ import java.io.Console;
  * -Краевые случаи (пустые массивы, все нули, нули на границах).
  * -Производительность (большие массивы) . // просто зафиксировать время выполнения по производительности эмпирическим путем
  */
-@TaskDescription(taskNumber = 18)
+@TaskDescription(taskNumber = 18, taskDescription = "duplicateZeros")
 public class Task18 implements Solution {
     /**
      * Дублирует каждый ноль в массиве, сдвигая элементы вправо.
@@ -45,7 +43,6 @@ public class Task18 implements Solution {
     public static void duplicateZeros(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
             if (arr[i] == 0) {
-                int temp = arr[i + 1];
                 for (int j = arr.length - 1; j >= i + 2; j--) {
                     arr[j] = arr[j - 1];
                 }

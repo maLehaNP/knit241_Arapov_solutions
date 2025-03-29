@@ -2,10 +2,9 @@ package org.knit.solutions;
 
 import org.junit.*;
 
-import java.util.Arrays;
 import java.util.Random;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertTrue;
 import static org.knit.solutions.Task18.duplicateZeros;
 
@@ -18,9 +17,9 @@ public class DuplicateZerosTest {
         duplicateZeros(arr1);
         duplicateZeros(arr2);
         duplicateZeros(arr3);
-        assertTrue(Arrays.equals(arr1, new int[] {1, 0, 0, 2, 3, 0, 0, 4}));  // Проверка корректного результата
-        assertTrue(Arrays.equals(arr2, new int[] {1, 2, 3}));
-        assertTrue(Arrays.equals(arr3, new int[] {1, 0, 0, 2, 3, 0, 0, 4, 5, 0, 0, 6, 7, 0, 0, 0, 0, 2, 5, 0, 0}));
+        assertArrayEquals(arr1, new int[]{1, 0, 0, 2, 3, 0, 0, 4});  // Проверка корректного результата
+        assertArrayEquals(arr2, new int[]{1, 2, 3});
+        assertArrayEquals(arr3, new int[]{1, 0, 0, 2, 3, 0, 0, 4, 5, 0, 0, 6, 7, 0, 0, 0, 0, 2, 5, 0, 0});
     }
 
     @Test
@@ -33,10 +32,10 @@ public class DuplicateZerosTest {
         duplicateZeros(arr2);
         duplicateZeros(arr3);
         duplicateZeros(arr4);
-        assertTrue(Arrays.equals(arr1, new int[] {}));
-        assertTrue(Arrays.equals(arr2, new int[] {0, 0, 0}));
-        assertTrue(Arrays.equals(arr3, new int[] {0, 0, 1, 2, 3, 3, 4, 5}));
-        assertTrue(Arrays.equals(arr4, new int[] {0, 0, 0, 0, 2, 3, 3, 4}));
+        assertArrayEquals(arr1, new int[]{});
+        assertArrayEquals(arr2, new int[]{0, 0, 0});
+        assertArrayEquals(arr3, new int[]{0, 0, 1, 2, 3, 3, 4, 5});
+        assertArrayEquals(arr4, new int[]{0, 0, 0, 0, 2, 3, 3, 4});
     }
 
     @Test
