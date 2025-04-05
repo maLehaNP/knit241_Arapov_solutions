@@ -10,4 +10,8 @@ public class User {
     public String getName() {
         return name;
     }
+
+    public void sendMessage(StockObserver observer, String message) {
+        System.out.println("%s получил уведомление от %s: \"%s\".%n");
+    }
 }
